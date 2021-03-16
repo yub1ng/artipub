@@ -32,8 +32,7 @@ class OschinaSpider extends BaseSpider {
   }
 
   async inputContent(article, editorSel) {
-    const footerContent = `<br><b>本篇文章由一文多发平台<a href="https://github.com/crawlab-team/artipub" target="_blank">ArtiPub</a>自动发布</b>`
-    const content = article.contentHtml + footerContent;
+    const content = article.contentHtml;
     //@ts-ignore
     const iframeWindow = document.querySelector('.cke_wysiwyg_frame').contentWindow
     const el = iframeWindow.document.querySelector(editorSel.content)

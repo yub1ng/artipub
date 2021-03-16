@@ -34,8 +34,7 @@ class JianshuSpider extends BaseSpider {
    * 输入文章内容
    */
   async inputContent(article, editorSel) {
-    const footerContent = `\n\n> 本篇文章由一文多发平台[ArtiPub](https://github.com/crawlab-team/artipub)自动发布`
-    const content = article.content + footerContent
+    const content = article.content
     document.execCommand('insertText', false, content)
   }
 
