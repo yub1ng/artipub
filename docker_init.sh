@@ -9,9 +9,9 @@ else
 	sed -i "s?http://localhost:3000?${ARTIPUB_API_ADDRESS}?g" ${jspath}
 fi
 
-# start frontend
-nginx -s stop | true
-nginx
-
 # start backend
-npm run prod
+yarn run prod
+
+# start frontend
+serve /frontend -l 8000
+
